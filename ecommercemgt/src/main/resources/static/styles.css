@@ -1,0 +1,77 @@
+/* styles.css */
+
+/* Background Styling */
+body {
+    background-image: url('/static/images/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #d32f2f;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+/* Form Container Styling */
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Heading */
+.form-container h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-container input, .form-container select, .form-container textarea {
+    background-color: #d32f2f;
+    border: 1px solid #d32f2f;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.form-container button {
+    background-color: #d32f2f;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #b71c1c;
+}
+
+/* Cancel Button */
+.form-container a.btn-outline-primary {
+    color: black;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.form-container a.btn-outline-primary:hover {
+    background-color: #0a58ca;
+    border-color: #0a58ca;
+}

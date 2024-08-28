@@ -1,0 +1,25 @@
+h1 {
+    background-color: #f0f8ff;
+    text-align: center;  /* Center the text horizontally */
+    color: darkred;          /* Set the text color to red */
+    font-weight: bold;   /* Make the text bold */
+
+}
+
+/* Set a light background color for the card to show behind the images */
+.card {
+    background-color: #f0f8ff; /* Light background color */
+    border: 1px solid #ddd; /* Light border around the card */
+    padding: 10px; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 1.1); /* Optional: Adds a shadow for a subtle 3D effect */
+    border-radius: 12px; /* Optional: Adds rounded corners to the card */
+}
+
+/* Make all images the same size */
+.card-img-top {
+    width: 100%; /* Ensures the image fills the width of its container */
+    height: 450px; /* Fixed height for uniform image sizes */
+    object-fit: cover; /* Crop the image to fill the container without distortion */
+    border-bottom: 1px solid #ccc; /* Optional: Adds a border line below the image */
+    margin-bottom: 12px; /* Space below the image */
+}
