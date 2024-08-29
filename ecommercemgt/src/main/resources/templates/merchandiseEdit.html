@@ -75,12 +75,12 @@
     </div>
 </nav>
 
-<center><h1>NEW MERCHANDISE REGISTER </h1></center>
+<center><h1>NEW MERCHANDISE REGISTER  <img src="/images/companylogo.jpg" alt="martial arts" style="width:300px; height:auto; float: left; margin-left: 5px;"> </h1></center>
 
 <div class="container my-5 p-5" style="border:1px solid black;">
     <h4 class="text-center"> Edit Product Here</h4>
     <!-- Update the form to use the correct model attribute name -->
-    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${availableMerchandise}">
+    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" enctype="multipart/form-data" th:object="${availableMerchandise}">
         <input type="hidden" th:field="*{id}" />
         <div class="mb-3">
             <label for="name" class="form-label"> Name</label>
@@ -106,6 +106,21 @@
             <label for="size" class="form-label">Size</label>
             <input type="text" class="form-control" id="size" th:field="*{size}" placeholder="Enter Size">
         </div>
+        <!-- Display current image if available -->
+        <div class="mb-3" th:if="${availableMerchandise.imageName}">
+            <label for="currentImage" class="form-label">Current Image</label>
+            <div>
+                <img th:src="@{'/images/' + ${availableMerchandise.imageName}}" alt="Current Image" style="width: 100px; height: auto;">
+            </div>
+        </div>
+
+
+        <!-- Input to upload a new image -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
+
         <center><button type="submit" class="btn btn-primary">Submit</button></center>
     </form>
 </div>

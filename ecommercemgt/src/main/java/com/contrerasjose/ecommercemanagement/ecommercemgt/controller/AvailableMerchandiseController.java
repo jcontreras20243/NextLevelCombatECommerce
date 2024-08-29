@@ -52,19 +52,37 @@ public class AvailableMerchandiseController {
     @PostMapping("/save")
     public String addAvailableMerchandise(@ModelAttribute AvailableMerchandise m, @RequestParam("image") MultipartFile file) {
         try {
-            // Save the file locally if it's not empty
+            // Check if the file is not empty
             if (!file.isEmpty()) {
+                // Create the directory if it does not exist
+                Path directoryPath = Paths.get(UPLOAD_DIR);
+                if (!Files.exists(directoryPath)) {
+                    Files.createDirectories(directoryPath);
+                }
+
+                // Save the new image
                 byte[] bytes = file.getBytes();
-                Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
+                Path path = directoryPath.resolve(file.getOriginalFilename());
                 Files.write(path, bytes);
-                m.setImageName(file.getOriginalFilename()); // Set the image name in the entity
+
+                // Update the merchandise with the new image name
+                m.setImageName(file.getOriginalFilename());
+            } else {
+                // Retain the existing image name if no new image is uploaded
+                AvailableMerchandise existingMerchandise = service.getAvailableMerchandiseById(m.getId());
+                if (existingMerchandise != null) {
+                    m.setImageName(existingMerchandise.getImageName());
+                }
             }
-            service.save(m); // Save the merchandise to the database
+
+            // Save the merchandise to the database
+            service.save(m);
         } catch (IOException e) {
             e.printStackTrace(); // Handle the exception if the file operation fails
         }
         return "redirect:/Available_Merchandise"; // Redirect to the list of available merchandise
     }
+
 
 
     // Mapping to show user's merchandise list
@@ -95,11 +113,13 @@ public class AvailableMerchandiseController {
     public String editMerchandise(@PathVariable("id") int id, Model model) {
         AvailableMerchandise m = service.getAvailableMerchandiseById(id);
         if (m != null) {
+            System.out.println("Editing merchandise with image: " + m.getImageName()); // Debug statement
             model.addAttribute("availableMerchandise", m);
             return "merchandiseEdit";
         }
         return "redirect:/Available_Merchandise"; // Redirect if merchandise not found
     }
+
 
     // Mapping to delete a merchandise item by id
     @RequestMapping("/deleteMerchandise/{id}")
