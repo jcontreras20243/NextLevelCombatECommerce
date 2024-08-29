@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,16 +44,23 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/My_Merchandise">My Merchandise</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="New_Merchandise_Register">New Merchandise Register</a>
+                </li>
             </ul>
             <div style="display: flex; gap: 20px;">
-                <a class="nav-link" href="New_Merchandise_Register" style="color: #FFD700; background-color: #990000; padding: 10px 20px; border-radius: 5px; text-decoration: none;">New Merchandise Register</a>
+                <a class="nav-link" href="/Users/getUsers" style="color: #FFD700; background-color: #990000; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Manage Users</a>
+                <a class="nav-link" href="/addUser" style="color: #FFD700; background-color: #990000; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Add User</a>
                 <a class="nav-link" href="/logout" style="color: #FFD700; background-color: #990000; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Logout</a>
             </div>
+
+
         </div>
     </div>
 </nav>
 
-<center><h1>CURRENT STORE INVENTORY</h1></center>
+<center><h1>CURRENT STORE INVENTORY     <img src="/images/companylogo.jpg" alt="martial arts" style="width:300px; height:auto; float: left; margin-left: 5px;">
+</h1></center>
 
 <div class="container my-5 col-md-6">
     <table class="table table-hover">
