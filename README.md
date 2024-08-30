@@ -1,0 +1,12 @@
+NEXTLEVEL COMBAT STORE MANAGEMENT SYSTEM 
+
+This project has to do with an e-commerce management system to allow a centralized location to keep records for the company's products/merchandise that have been ordered in the past, are currently on hand, and where new products can be added, updated, or deleted. It also allows the user to keep updated records of users/clients through he use of different entities or models and the different relationships among themselves.  The project is made up of controllers, config, entity, repository, security, and service folders with their respective files. This project used different technologies from JAVA, bootstrap, MySQL, Hibernate, Spring Framework (including Spring Security), CSS, JavaScript, Spring Boot, Thymeleaf along HTML.
+
+Before being able to access this application the user will need to have login credentials both a username and password. Currently, there are 3 Users set up one with the role of superuser, employee or manager, and admin. Once logged in the user will be at the home page which has the system name and other links can be accessed. 
+
+The second tab is Available Merchandise. This is where the user can view previously ordered merchandise that can also be reordered if they choose to from their wholesale sellers from quantities in the double to triple digits and the user can view a picture of the items. They can also update the quantity, and price agreed upon and will have a record of the product through the name of the product or ID. If items are reordered, they can be added to my merchandise. My merchandise tab takes the user to the current store inventory and once those items are sold out the user is then able to take the action of deleting that product from this system. The next tab is New Merchandise Register this page will allow for new products to be registered and moved into the available merchandise the name of the product to the image can be entered along with other information and then submitted.  The previously mentioned tabs perform the CRUD operations on the merchandise/products. 
+
+To the far right of the tab page, there are three other tabs one is named Manage Users which shows the user information from names to phone numbers these tables can be edited or deleted from this page and the other tab is the Add User which allows for new users to be added to the Manage Users page. Finally, the user can go to the last tab which is the Logout to sign off. 
+
+GitHub Link: https://github.com/jcontreras20243/NextLevelCombatECommerce
+
