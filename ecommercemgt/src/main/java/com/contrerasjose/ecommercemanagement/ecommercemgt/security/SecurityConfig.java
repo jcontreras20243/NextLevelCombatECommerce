@@ -20,25 +20,25 @@ public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
 
-        UserDetails wilbur = User.builder()
-                .username("JoseC")
+        UserDetails jose = User.builder()
+                .username("jose")
                 .password("{noop}123")
                 .roles("SUPERUSER")
                 .build();
 
-        UserDetails mary = User.builder()
-                .username("mary")
+        UserDetails joe = User.builder()
+                .username("joe")
                 .password("{noop}test123")
                 .roles("EMPLOYEE", "MANAGER")
                 .build();
 
-        UserDetails susan = User.builder()
-                .username("susan")
+        UserDetails amy = User.builder()
+                .username("amy")
                 .password("{noop}test123")
                 .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(wilbur, mary, susan);
+        return new InMemoryUserDetailsManager(jose, joe, amy);
     }
 
 }
